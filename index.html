@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> CM Swemy Real Estate </title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+    <style>
+        body{
+            background: #f2f4f8;
+            font-family: Arial,sans-serif;
+        }
+        section{
+            background: white;
+            margin: 30px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#enquiry">Enquiry</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section">
+    <h1>Home</h1>
+    <h2 style="margin-top: 80px;">About Us</h2>
+    
+    <p style="margin-top: 20px;">
+       Welcome to CM Swamy Real Estate, your trusted partner for real estate services across Tamil Nadu.
+ We help people find the right property that matches their needs, lifestyle, and budget.
+
+Whether you are looking to buy, sell, or invest in land, plots, houses, or commercial properties, we provide complete guidance from start to end. 
+Our team focuses on honesty, transparency, and customer satisfaction, so you can feel confident in every decision.
+
+We understand that buying property is a big step. That’s why we give clear information, genuine listings, and proper support at every stage. Our goal is simple – to make your property journey easy, safe, and stress-free.
+At CM Swamy Real Estate, we don’t just sell properties, we help you build your future.
+    </p>
+ <br>
+    <img src="next.jpeg" class="profile-img" style="width: 400px;">
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>Our Projects</h2>
+
+    <div class="slider">
+        <img src="image01.jpeg" class="slide active">
+        <img src="image02.jpeg" class="slide">
+        <img src="image03.jpeg" class="slide">
+        <button class="nav prev">&#10098;</button>
+        <button class="nav next">&#10095;</button>
+    </div>
+    <script>
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+ function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[i].classList.add("active");
+ }
+
+ document.querySelector(".next").addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+ });
+
+ document.querySelector(".prev").addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+ });
+
+ setInterval(() => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+ }, 5000);
+</script>
+<div class="details">     
+ <h3 style="margin-top: 90px;">details</h3>
+    
+     <img src="image01.jpeg" style="width: 200px;">
+     <p style="margin-top: 20px;">80 acres|400 ft.frontage | state highways Landmark Pennalur | Nanjai land</p>
+      
+     
+     <img src="image02.jpeg" style="width: 200px;">
+     <P style="margin-top: 20px;">3634 sqft | Rs.6600 | plot no:22 | Landmark Kattankulathur SRM Potheri</P>
+    
+     
+     <video width="300" controls>
+  <source src="video2.mp4" type="video/mp4">
+</video>
+<p style="margin-top: 20px;">Pallavaram GST Road Olymbia Apartment
+
+*3A 3rd Floor | 1390 sqft | 3BHK
+Price
+95 Lakhs Only-/-
+
+*7th Floor | 1200 sqft | 2 BHK
+Price
+85 Lakhs Only-/</p>
+</div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry" class="section">
+    <h2>Enquiry</h2>
+
+    <form id="enquiryForm">
+        <input type="text" id="name" name="Name" placeholder="Your Name" required>
+        <input type="email" id="email" name="Email" placeholder="Email Address" required>
+        <input type="tel" id="phone" name="Phone" placeholder="Contact Number" required>
+        <textarea id="message" name="Message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Enquiry</button>
+    </form>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>📍 30 Udhaya suriyan Nagar Nandhivaram Guduvancheri 603202 </p>
+    <p>📞 +91 98415 67111 </p>
+    <p>✉️ swamyrealestate10@gmail.com </p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
